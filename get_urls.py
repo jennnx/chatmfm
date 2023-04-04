@@ -5,7 +5,7 @@ from googleapiclient.discovery import build
 
 def get_youtube_videos(channel_id):
     # Set up YouTube API client
-    DEVELOPER_KEY = 'AIzaSyAF7T20EId246w1ObIg6btww27TRRSVA9U'
+    DEVELOPER_KEY = os.environ.get('GOOGLE_API_KEY')
     youtube = build('youtube', 'v3', developerKey=DEVELOPER_KEY)
 
     # Get video IDs for channel uploads playlist
